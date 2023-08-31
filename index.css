@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 100px 1fr;
+  align-items: center;
+  background-color: #f0fff0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: none;
+}
+
+.heading {
+  cursor: pointer;
+  text-align: center;
+  font-size: 6.5rem;
+  animation: heading 500ms ease-in-out;
+  background: linear-gradient(45deg, #ff6347, #1e90ff, #20b2aa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes heading {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.main-grid {
+  position: relative;
+  font-size: 1.6rem;
+  border: 2px solid #808080;
+  width: 50%;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  animation: mainGrid 1s ease-in-out;
+}
+
+@keyframes mainGrid {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.grid-item {
+  height: 180px;
+  font-size: 8rem;
+  cursor: pointer;
+  border: 2px solid #808080;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-item.cross {
+  color: #ff6347;
+}
+
+.grid-item.zero {
+  color: #20b2aa;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-grid {
+    width: 80%;
+  }
+}
+
+/* Winner Modal */
+.winner-modal {
+  position: absolute;
+  width: 50%;
+  height: 300px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #ff6347, #1e90ff, #20b2aa);
+  color: #f0fff0;
+  font-weight: 600;
+  z-index: 10;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+  font-size: 4rem;
+  display: none;
+}
+
+.reset-button {
+  color: #333333;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1.4rem 3rem;
+  background-color: #f08080;
+  border: none;
+  border-radius: 1rem;
+}
