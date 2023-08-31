@@ -88,12 +88,6 @@ body {
   color: #20b2aa;
 }
 
-@media only screen and (max-width: 1024px) {
-  .main-grid {
-    width: 80%;
-  }
-}
-
 /* Winner Modal */
 .winner-modal {
   position: absolute;
@@ -124,4 +118,17 @@ body {
   background-color: #f08080;
   border: none;
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main-grid {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .reset-button {
+    padding: none;
+    font-size: 1.4rem;
+  }
 }
